@@ -1,0 +1,32 @@
+export const capabilities: string[] = [
+  "UX Strategy",
+  "UX Research",
+  "UI Design",
+  "Information Architecture",
+  "Product Design",
+  "Design Systems",
+  "Service Design",
+  "Human-Centered Design",
+  "Design Thinking",
+  "Motion Graphics",
+  "Documentary Production",
+  "Video Editing",
+  "Storytelling",
+  "Front-End Development",
+  "Stakeholder Management",
+  "Product Ownership",
+];
+
+export const toolkit: string[] = [
+  "Figma",
+  "Adobe XD",
+  "Photoshop",
+  "Illustrator",
+  "Premiere Pro",
+  "After Effects",
+  "HTML",
+  "CSS",
+  "Miro",
+  "Jira",
+  "Confluence",
+];
