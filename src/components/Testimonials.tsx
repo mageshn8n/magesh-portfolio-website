@@ -19,8 +19,10 @@ export default function Testimonials() {
                 {testimonial.initials}
               </span>
               <div>
-                <p className="text-sm font-semibold">{testimonial.role}</p>
-                <p className="text-xs text-[color:var(--color-fg-muted)]">{testimonial.context}</p>
+                <p className="text-sm font-semibold">{testimonial.name ?? testimonial.role}</p>
+                <p className="text-xs text-[color:var(--color-fg-muted)]">
+                  {testimonial.name ? `${testimonial.role} · ${testimonial.context}` : testimonial.context}
+                </p>
               </div>
             </figcaption>
           </figure>
