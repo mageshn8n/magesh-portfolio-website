@@ -17,7 +17,7 @@ export default function About() {
           ))}
 
           <div className="mt-4 flex flex-wrap items-center gap-4">
-            <a href="/contact" className="btn btn-secondary">
+            <a href="/resume/Magesh-K-Palani-Resume.pdf" download className="btn btn-secondary">
               {site.aboutCta}
             </a>
             <span className="chip">{site.aboutBadge}</span>
