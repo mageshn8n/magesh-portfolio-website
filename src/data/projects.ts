@@ -35,18 +35,6 @@ export const categories: Category[] = [
     blurb:
       "Product strategy and UX for B2B SaaS — from 0-to-1 product bets to scaling design systems around a growing feature set.",
   },
-  {
-    slug: "social-reels",
-    name: "Social Reels",
-    blurb:
-      "Short-form motion and storytelling built for social platforms — fast-paced, subtitle-first, and designed to hold attention in the first two seconds.",
-  },
-  {
-    slug: "documentary-films",
-    name: "Documentary Films",
-    blurb:
-      "Long-form documentary work — story development, field production and edit, built around real people and real stakes.",
-  },
 ];
 
 export type Project = {
@@ -66,20 +54,6 @@ const raw: Record<string, [string, string][]> = {
   "saas-products": [
     ["Project Management SaaS", "B2B productivity · 0→1 product"],
     ["Customer Success Platform", "Retention & health · Lifecycle UX"],
-  ],
-  "social-reels": [
-    ["Wellness Campaign", "Short-form series · Motion graphics"],
-    ["Educational Content Series", "Explainer reels · Subtitled"],
-    ["Brand Storytelling Campaign", "Narrative reels · Visual identity"],
-    ["Product Launch Reel", "Hype film · Kinetic type"],
-    ["Community Impact Stories", "Human stories · Field footage"],
-  ],
-  "documentary-films": [
-    ["Water Conservation", "Documentary film · Story + edit"],
-    ["Rural Development Story", "Field documentary · Sound design"],
-    ["Volunteer Impact Film", "Human interest · Interviews"],
-    ["Environmental Awareness", "Advocacy film · Motion + edit"],
-    ["Human Transformation Journey", "Long-form · Cinematic"],
   ],
 };
 

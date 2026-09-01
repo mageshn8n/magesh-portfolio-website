@@ -14,22 +14,22 @@ export const site = {
   phone: "+91 99014 00885",
   yearsExperience: 18,
   metaDescription:
-    "Magesh K Palani is a Senior UX/UI Product Designer, Design Strategist and Visual Storyteller with 18+ years of experience creating digital products, design systems and documentary films for global organizations.",
+    "Magesh K Palani is a Senior UX/UI Product Designer, Design Strategist and Visual Storyteller with 18+ years of experience creating digital products and design systems for global organizations.",
 
   heroHeadline: "Designing products, systems & stories that create meaningful human experiences.",
   heroSubline:
-    "18+ years helping organizations transform complex ideas into intuitive digital products, scalable design systems, compelling documentaries, and engaging visual experiences.",
+    "18+ years helping organizations transform complex ideas into intuitive digital products, scalable design systems, and engaging visual experiences.",
   heroPrimaryCta: "Book a discovery call",
   heroSecondaryCta: "View my work",
 
-  trustedTags: ["Ex IBM", "Ex Dell", "Senior Product Owner", "UX Consultant", "Video Production"],
+  trustedTags: ["Ex IBM", "Ex Dell", "Senior Product Owner", "UX Consultant"],
 
   aboutEyebrow: "Meet Magesh",
   aboutParagraphs: [
     "A Senior UX/UI Product Designer, Design Strategist, and Visual Storyteller with more than 18 years of experience creating digital experiences for global organizations.",
     "My journey began with graphic design and front-end development and evolved into a deep specialization in user experience, product strategy, information architecture, and human-centered design.",
     "Having worked with industry leaders including IBM and Dell, I bring enterprise-grade design thinking, systems thinking, and strategic problem-solving to every project.",
-    "Today, alongside my role as Senior Product Owner at Art of Living, I partner with startups, NGOs, SaaS companies, and enterprises to design products, build design systems, create documentaries, and craft meaningful digital experiences.",
+    "Today, alongside my role as Senior Product Owner at Art of Living, I partner with startups, NGOs, SaaS companies, and enterprises to design products, build design systems, and craft meaningful digital experiences.",
   ],
   aboutBadge: "Psychology & neuroscience-informed practice",
   aboutCta: "Download resume",
@@ -37,7 +37,7 @@ export const site = {
   contactEyebrow: "Let's Collaborate",
   contactHeadline: "Let's build something meaningful together.",
   contactSubline:
-    "Whether you're launching a product, improving an existing experience, creating a design system, or telling an impactful story through video — I'd love to collaborate.",
+    "Whether you're launching a product, improving an existing experience, or creating a design system — I'd love to collaborate.",
 } as const;
 
 export const stats = [

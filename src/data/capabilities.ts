@@ -9,8 +9,6 @@ export const capabilities: string[] = [
   "Human-Centered Design",
   "Design Thinking",
   "Motion Graphics",
-  "Documentary Production",
-  "Video Editing",
   "Storytelling",
   "Front-End Development",
   "Stakeholder Management",

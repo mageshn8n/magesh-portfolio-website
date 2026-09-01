@@ -7,8 +7,8 @@ export default function Services() {
       <div className="mb-14 sm:mb-16">
         <SectionHeading
           eyebrow="Services"
-          title="Strategy, design & story — under one roof."
-          subline="From a focused UX audit to an end-to-end product or a finished documentary, engagements are scoped to the outcome you need."
+          title="Strategy, design & systems — under one roof."
+          subline="From a focused UX audit to an end-to-end product build, engagements are scoped to the outcome you need."
         />
       </div>
 

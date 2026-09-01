@@ -4,7 +4,7 @@ import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: `Services — ${site.name}`,
-  description: "UX/UI design consulting, design systems, SaaS and mobile product design, and video production.",
+  description: "UX/UI design consulting, design systems, SaaS and mobile product design.",
 };
 
 export default function ServicesPage() {
