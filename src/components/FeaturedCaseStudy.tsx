@@ -106,7 +106,8 @@ export default function FeaturedCaseStudy({
   const hasProductScreens =
     study.slug === "engagement-management-system" ||
     study.slug === "whispering-infinity-design-system" ||
-    study.slug === "pkisecops-design-system";
+    study.slug === "pkisecops-design-system" ||
+    study.slug === "healthcare-saas-management-platform";
   const isMyBud = study.slug === "mybud-ux-teardown";
 
   return (

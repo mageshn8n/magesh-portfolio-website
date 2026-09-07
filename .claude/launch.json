@@ -7,6 +7,18 @@
       "runtimeArgs": ["run", "dev"],
       "port": 3000,
       "autoPort": true
+    },
+    {
+      "name": "classical-melodies-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev:classical-melodies"],
+      "port": 3300
+    },
+    {
+      "name": "hms-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev:hms"],
+      "port": 3010
     }
   ]
 }

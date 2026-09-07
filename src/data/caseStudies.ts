@@ -903,4 +903,105 @@ caseStudies.push({
   },
 });
 
+caseStudies.push({
+  slug: "healthcare-saas-management-platform",
+  title: "Healthcare SaaS Management Platform",
+  tagline:
+    "A modular, multi-tenant Hospital Management SaaS — from a 29-section product brief to a working, browser-verified Phase 1 across patients, appointments, EMR, billing and RBAC.",
+  category: "saas-products",
+  meta: "Multi-tenant Healthcare SaaS · Next.js 16 full-stack build · 8 modules shipped, verified end-to-end",
+  role: "Product Design, Architecture & Full-Stack Development",
+  duration: "Solo build sprint — concept to working prototype",
+  client: "Independent product exploration",
+  tags: ["Healthcare UX", "SaaS Product Design", "Full-Stack Development", "RBAC & Enterprise UX", "Design Systems"],
+  highlights: [
+    { value: "8", label: "Modules shipped in Phase 1" },
+    { value: "6", label: "Role-based permission sets enforced" },
+    { value: "3", label: "Branches under one multi-tenant org" },
+    { value: "0", label: "Type errors on the production build" },
+  ],
+  overview:
+    "The brief was a full hospital-operating-system spec — 29 sections covering everything from patient registration to a super-admin console, telemedicine and AI-assisted workflows. Rather than building a flat feature list, the job was to turn that into a real product: a phased MVP for ABC Healthcare, a fictional multi-branch hospital group, that a receptionist, doctor, nurse or billing clerk could actually use — not a slideshow of screens, a system where booking a patient really checks a doctor's calendar and posting a payment really updates an invoice's balance.",
+  challenge:
+    "The spec described a mature, multi-year enterprise platform — Laboratory, Pharmacy, Telemedicine, CRM, a Super Admin console, subscription billing, AI assistants — all at once. Building all of it first would have meant a wide, shallow demo instead of a deep, working one. The second challenge was underneath the surface: ten distinct roles (from Org Admin down to Lab Technician) needed genuinely different nav, page access and available actions, not just a hidden button here and there; and every screen needed to run on data that looked like a real Indian multi-branch hospital group, not lorem ipsum or generic placeholder rows.",
+  challengeList: [
+    "Turning a 29-section, all-phases spec into a Phase 1 MVP without losing the parts that make it feel like a real hospital system",
+    "Modeling multi-tenancy properly — one organization, three branches, branch-scoped data — without hard-coding a single-branch assumption anywhere",
+    "Enforcing RBAC for 10 roles at three separate layers (navigation, page access, server-side actions) so a hidden button was never the only line of defense",
+    "Building a mock data layer realistic enough to expose real UX problems — double-booked doctors, overpaid invoices, partially-paid bills — while keeping a clean seam to swap in a real database later",
+    "Generating seed data that reads as a real Indian healthcare org (real names, real specialties, real medicine names) instead of generic placeholder content",
+  ],
+  approach:
+    "The spec's own section on product strategy said not to build every module at once — so that became the plan: Phase 1 covers Organization Management, Patients, Appointments, Doctors, Consultations/EMR, Billing and a live Dashboard, with Laboratory, Pharmacy and Patient Engagement present in the navigation as clearly labeled Phase 2/3 placeholders rather than missing entirely. Architecturally, every mutation runs through Server Actions into a service layer sitting in front of an in-memory data store — every service function is async even when the underlying store lookup isn't, so the entire mock layer can be swapped for a real database later without touching a single page or component. On top of that: shadcn/ui for the component layer, a slate-teal-and-terracotta palette chosen specifically to avoid the generic 'medical blue and green' look, and a deliberately data-dense 14px type scale suited to tables and forms rather than a marketing site.",
+  process: [
+    { title: "1 · Scope the MVP", description: "Read the full 29-section brief, then defined a 6-module Phase 1 with everything else staged as clearly labeled Phase 2/3 nav placeholders." },
+    { title: "2 · Architecture & data model", description: "Domain types, a service-layer seam over a mock in-memory store, RBAC permission map, and a seeded-account auth flow — all decided before any UI." },
+    { title: "3 · Design system & shell", description: "Palette, typography, and the persistent sidebar/topbar shell with branch switching and a demo role-switcher, built first so every later module inherited it." },
+    { title: "4 · Module-by-module build", description: "Patients → Doctors → Appointments → Consultations/EMR → Billing → Dashboard & Reports → Settings, each one verified in the browser before moving on." },
+    { title: "5 · Verify the real flows", description: "Walked the three flows the spec called out as most important — New Patient, Doctor Consultation, Billing — end to end, as different roles, in a real browser." },
+  ],
+  featuresLabel: "What Phase 1 actually does",
+  features: [
+    { title: "Patients", description: "Registration, search by name/ID/phone, and a profile with a real chronological timeline — registration → appointment → consultation → prescription → invoice." },
+    { title: "Appointments", description: "Day/Week/Month views with doctor and department filters, live slot availability pulled from each doctor's working hours, and a full status lifecycle: scheduled → confirmed → checked-in → completed / cancelled / no-show." },
+    { title: "Consultations & EMR", description: "A doctor's queue of checked-in patients, a patient-context sidebar (allergies, history, past prescriptions) always visible during the visit, and a prescription builder with a printable output." },
+    { title: "Billing", description: "Invoices from a completed consultation or built ad-hoc from a service catalogue, partial/full payments with a working overpayment guard, refunds, and a printable receipt." },
+    { title: "Dashboard & Reports", description: "Today/Yesterday/This Week/This Month/Custom date ranges driving real KPI cards, revenue and appointment-trend charts, department and doctor utilization, and CSV export." },
+    { title: "Organization & RBAC", description: "Branch and department management, user administration, and a read-only permissions matrix showing exactly what each of the 6 core roles can see and do." },
+  ],
+  subCaseStudiesLabel: "The three flows the spec called out as most important",
+  subCaseStudies: [
+    {
+      title: "Flow 1 — New Patient",
+      meta: "Dashboard → Add Patient → Profile → Appointment → Check-in",
+      challenge: "A receptionist needs to register a walk-in patient and get them onto a doctor's calendar in as few steps as possible, without double-booking a slot the doctor doesn't actually have open that day.",
+      decision: "Appointment booking reads each doctor's real working-hours record and existing bookings before ever showing a time slot, so the picker only ever offers times that are actually free — the conflict check runs server-side too, not just in the UI.",
+      outcome: "Verified live: registered a new patient, booked them against a specific doctor's real availability, and checked them in — the patient's profile timeline updated with both events immediately.",
+      tags: ["Patient Registration", "Scheduling Conflicts", "Receptionist Workflow"],
+    },
+    {
+      title: "Flow 2 — Doctor Consultation",
+      meta: "Appointments → Patient → Consultation → Diagnosis → Prescription",
+      challenge: "Once a patient is checked in, the doctor needs their full context — allergies, history, past prescriptions — without leaving the consultation screen to go look it up elsewhere.",
+      decision: "The consultation workspace keeps a patient-summary card permanently visible alongside the chief-complaint/vitals/diagnosis form, and completing a consultation immediately unlocks a prescription builder tied to that same visit.",
+      outcome: "Verified live: completed a consultation for a returning diabetes-follow-up patient, wrote a prescription, and opened the print-ready output — all without a page reload losing the patient's context.",
+      tags: ["EMR", "Clinical Context", "Prescription Printing"],
+    },
+    {
+      title: "Flow 3 — Billing",
+      meta: "Services → Invoice → Payment → Receipt",
+      challenge: "Billing staff need to record partial payments over time without the system silently allowing a patient to be charged more than they actually owe.",
+      decision: "Payment recording checks the remaining balance server-side on every submission and rejects an overpayment with a message pointing staff to the refund flow instead — the guard can't be bypassed by editing the form.",
+      outcome: "Verified live: attempted an intentional overpayment and watched it get rejected with the correct remaining-balance message, then recorded the correct amount and printed a receipt showing full payment history.",
+      tags: ["Billing Guardrails", "Payment Recording", "Printable Receipts"],
+    },
+  ],
+  outcome:
+    "This is a prototype, not a live deployment, so the numbers below describe what was actually built and verified rather than production usage. Every one of the 8 shipped modules was exercised in a real browser session — logging in as six different demo roles and confirming the sidebar, available actions and data scope changed correctly for each; running all three named flows end to end; and deliberately trying to break the billing overpayment guard to confirm it held. The production build (`next build`) compiles cleanly with zero TypeScript errors across the whole app.",
+  outcomeMetrics: [
+    { value: "6", label: "Demo roles verified with distinct nav & permissions" },
+    { value: "3 / 3", label: "Named flows completed end-to-end in-browser" },
+    { value: "0", label: "TypeScript errors on production build" },
+    { value: "1", label: "Overpayment attempt correctly rejected by the billing guard" },
+  ],
+  learnings: [
+    {
+      title: "A phased MVP beats a flat feature list",
+      description: "Building 6 deep modules with real data flowing between them told a far more credible product story than a thinner slice of all 29 spec sections would have — the spec's own phased rollout advice turned out to be the right call to actually follow, not just note.",
+    },
+    {
+      title: "RBAC needs three layers, not one",
+      description: "Hiding a nav link is a UX nicety, not security — every permission check had to be repeated at the page level (redirect on direct URL access) and again inside the server action itself, since a hidden button is never the only thing standing between a role and an action it shouldn't have.",
+    },
+    {
+      title: "Realistic seed data surfaces real bugs",
+      description: "Generating patients with a real Indian address pool caught a genuine data bug — a Chennai street name paired with a Hyderabad city — that generic placeholder data would never have surfaced. Realistic data is a testing tool, not just a cosmetic one.",
+    },
+    {
+      title: "A swappable data seam pays for itself immediately",
+      description: "Routing every mutation through a service layer — even one backed by an in-memory store — meant the mock data layer could evolve (fixing the address-generation bug, adding branch-qualified labels to a dashboard chart) without touching a single page component.",
+    },
+  ],
+});
+
 export const getFeaturedBySlug = (slug: string) => caseStudies.find((c) => c.slug === slug);

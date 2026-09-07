@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-type Screen = { src: string; alt: string; label: string; w: number; h: number };
+type Screen = { src: string; alt: string; label: string; w: number; h: number; scrollHint?: boolean };
 
 const screens: Record<string, Screen[]> = {
   "engagement-management-system": [
@@ -65,6 +65,40 @@ const screens: Record<string, Screen[]> = {
       h: 6531,
     },
   ],
+  "healthcare-saas-management-platform": [
+    {
+      src: "/case-studies/healthcare-saas-management-platform/patient-profile.png",
+      alt: "HMS — patient profile with chronological timeline",
+      label: "Patient profile — demographics, medical history and a full visit timeline",
+      w: 1440,
+      h: 900,
+      scrollHint: false,
+    },
+    {
+      src: "/case-studies/healthcare-saas-management-platform/appointments.png",
+      alt: "HMS — appointment scheduling, week view",
+      label: "Appointments — Day/Week/Month views with doctor and department filters",
+      w: 1440,
+      h: 900,
+      scrollHint: false,
+    },
+    {
+      src: "/case-studies/healthcare-saas-management-platform/doctors.png",
+      alt: "HMS — doctor directory",
+      label: "Doctor directory across branches, departments and specializations",
+      w: 1440,
+      h: 900,
+      scrollHint: false,
+    },
+    {
+      src: "/case-studies/healthcare-saas-management-platform/billing.png",
+      alt: "HMS — billing and invoices",
+      label: "Billing — invoice list with status filters and collections/outstanding KPIs",
+      w: 1440,
+      h: 900,
+      scrollHint: false,
+    },
+  ],
 };
 
 export default function ProductScreens({ slug }: { slug: string }) {
@@ -78,7 +112,10 @@ export default function ProductScreens({ slug }: { slug: string }) {
           <div className="max-h-[640px] overflow-y-auto rounded-lg border border-[color:var(--color-border)] bg-white">
             <Image src={screen.src} alt={screen.alt} width={screen.w} height={screen.h} className="h-auto w-full" />
           </div>
-          <p className="text-xs text-[color:var(--color-fg-muted)]">{screen.label} — scroll to see the full page</p>
+          <p className="text-xs text-[color:var(--color-fg-muted)]">
+            {screen.label}
+            {screen.scrollHint !== false && " — scroll to see the full page"}
+          </p>
         </div>
       ))}
     </div>

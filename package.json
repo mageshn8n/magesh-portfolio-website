@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "dev:classical-melodies": "npm --prefix ../../classical_Melodies/website run dev",
+    "dev:hms": "npm --prefix ../../hms/www run dev"
   },
   "dependencies": {
     "clsx": "^2.1.1",

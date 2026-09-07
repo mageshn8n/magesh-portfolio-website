@@ -31,6 +31,7 @@ export const realScreenshotThumbs: Record<string, string> = {
   "whispering-infinity-design-system": "/case-studies/whispering-infinity-design-system/design-system.png",
   "scope-plus-heuristic-usability-review": "/case-studies/scope-plus/07-search-after.png",
   "pkisecops-design-system": "/case-studies/pkisecops-design-system/foundations.png",
+  "healthcare-saas-management-platform": "/case-studies/healthcare-saas-management-platform/dashboard.png",
 };
 
 // Slugs with a real screenshot that's a normal (portrait) app screen rather
