@@ -9,6 +9,9 @@ import WhisperingInfinityVisual from "./WhisperingInfinityVisual";
 import EMSVisual from "./EMSVisual";
 import WhisperingInfinityDSVisual from "./WhisperingInfinityDSVisual";
 import PKISecOpsVisual from "./PKISecOpsVisual";
+import ScopePlusVisual from "./ScopePlusVisual";
+import MyBUDVisual from "./MyBUDVisual";
+import HMSVisual from "./HMSVisual";
 
 export const caseStudyVisuals: Record<string, ComponentType> = {
   "quality-management-process-library": OpalVisual,
@@ -21,6 +24,9 @@ export const caseStudyVisuals: Record<string, ComponentType> = {
   "engagement-management-system": EMSVisual,
   "whispering-infinity-design-system": WhisperingInfinityDSVisual,
   "pkisecops-design-system": PKISecOpsVisual,
+  "scope-plus-heuristic-usability-review": ScopePlusVisual,
+  "mybud-ux-teardown": MyBUDVisual,
+  "healthcare-saas-management-platform": HMSVisual,
 };
 
 // Slugs where a real product screenshot exists — used as the grid thumbnail

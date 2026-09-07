@@ -73,7 +73,14 @@ export default function Work() {
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <div className="absolute inset-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105">
-                  {realScreenshotThumbs[item.slug] ? (
+                  {caseStudyVisuals[item.slug] ? (
+                    <CaseStudyThumb>
+                      {(() => {
+                        const Visual = caseStudyVisuals[item.slug];
+                        return <Visual />;
+                      })()}
+                    </CaseStudyThumb>
+                  ) : realScreenshotThumbs[item.slug] ? (
                     <Image
                       src={realScreenshotThumbs[item.slug]}
                       alt={item.title}
@@ -91,13 +98,6 @@ export default function Work() {
                         className="h-full w-auto object-contain"
                       />
                     </div>
-                  ) : caseStudyVisuals[item.slug] ? (
-                    <CaseStudyThumb>
-                      {(() => {
-                        const Visual = caseStudyVisuals[item.slug];
-                        return <Visual />;
-                      })()}
-                    </CaseStudyThumb>
                   ) : (
                     <WorkThumb slug={item.slug} />
                   )}

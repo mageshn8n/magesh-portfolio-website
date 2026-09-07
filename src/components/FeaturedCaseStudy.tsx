@@ -164,11 +164,7 @@ export default function FeaturedCaseStudy({
         </div>
       )}
 
-      {Visual ? (
-        <div className="card mt-14 flex items-center justify-center p-6 sm:p-10">
-          <Visual />
-        </div>
-      ) : realScreenshotThumbs[study.slug] ? (
+      {realScreenshotThumbs[study.slug] ? (
         <div className="card relative mt-14 aspect-[16/9] w-full overflow-hidden">
           <Image
             src={realScreenshotThumbs[study.slug]}
@@ -187,6 +183,10 @@ export default function FeaturedCaseStudy({
             height={806}
             className="h-full w-auto object-contain"
           />
+        </div>
+      ) : Visual ? (
+        <div className="card mt-14 flex items-center justify-center p-6 sm:p-10">
+          <Visual />
         </div>
       ) : (
         <div className="card mt-14 aspect-[16/9] w-full overflow-hidden">
