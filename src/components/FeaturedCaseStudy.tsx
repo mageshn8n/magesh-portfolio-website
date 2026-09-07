@@ -156,6 +156,14 @@ export default function FeaturedCaseStudy({
         ))}
       </div>
 
+      {study.prdDownload && (
+        <div className="mt-6">
+          <a href={study.prdDownload.href} download className="btn btn-secondary">
+            {study.prdDownload.label}
+          </a>
+        </div>
+      )}
+
       {Visual ? (
         <div className="card mt-14 flex items-center justify-center p-6 sm:p-10">
           <Visual />
@@ -222,6 +230,17 @@ export default function FeaturedCaseStudy({
           {study.approach}
         </p>
       </div>
+
+      {study.requirementsSummary && (
+        <div className="mt-16 border-t border-[color:var(--color-border)] pt-12">
+          <p className="label mb-8">{study.requirementsSummaryLabel ?? "Requirements summary"}</p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {study.requirementsSummary.map((item, i) => (
+              <Block key={item.title} index={i} title={item.title} description={item.description} />
+            ))}
+          </div>
+        </div>
+      )}
 
       {study.process && (
         <div className="mt-16 border-t border-[color:var(--color-border)] pt-12">

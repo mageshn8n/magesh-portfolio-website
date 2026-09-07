@@ -34,6 +34,9 @@ export type FeaturedCaseStudy = {
   challenge: string;
   challengeList?: string[];
   approach: string;
+  prdDownload?: { href: string; label: string };
+  requirementsSummaryLabel?: string;
+  requirementsSummary?: NamedBlock[];
   process?: NamedBlock[];
   features?: NamedBlock[];
   featuresLabel?: string;
@@ -933,6 +936,20 @@ caseStudies.push({
   ],
   approach:
     "The spec's own section on product strategy said not to build every module at once — so that became the plan: Phase 1 covers Organization Management, Patients, Appointments, Doctors, Consultations/EMR, Billing and a live Dashboard, with Laboratory, Pharmacy and Patient Engagement present in the navigation as clearly labeled Phase 2/3 placeholders rather than missing entirely. Architecturally, every mutation runs through Server Actions into a service layer sitting in front of an in-memory data store — every service function is async even when the underlying store lookup isn't, so the entire mock layer can be swapped for a real database later without touching a single page or component. On top of that: shadcn/ui for the component layer, a slate-teal-and-terracotta palette chosen specifically to avoid the generic 'medical blue and green' look, and a deliberately data-dense 14px type scale suited to tables and forms rather than a marketing site.",
+  prdDownload: {
+    href: "/documents/healthcare-saas-management-platform-prd.docx",
+    label: "Download the full PRD (.docx)",
+  },
+  requirementsSummaryLabel: "Requirements summary — from the full PRD",
+  requirementsSummary: [
+    { title: "Organization & RBAC", description: "Multi-branch organization model with departments, users, and a permission system enforced at the nav, page, and server-action layers for 6 core roles." },
+    { title: "Patients", description: "Registration, search by name/ID/phone, and a chronological visit timeline per patient." },
+    { title: "Appointments", description: "Day/Week/Month calendar views, doctor & department filters, and conflict-checked booking against real working hours." },
+    { title: "Doctors", description: "Directory with working hours, capacity, and per-doctor analytics on appointments, cancellations, no-shows and revenue." },
+    { title: "Consultations & EMR", description: "A doctor's queue, always-visible patient context, structured clinical capture, and a printable prescription." },
+    { title: "Billing", description: "Invoicing from a consultation or ad-hoc, partial/full payments with a server-enforced overpayment guard, refunds, and printable receipts." },
+    { title: "Dashboard & Reports", description: "Date-ranged KPIs, revenue and appointment trend charts, department/doctor performance, and CSV export." },
+  ],
   process: [
     { title: "1 · Scope the MVP", description: "Read the full 29-section brief, then defined a 6-module Phase 1 with everything else staged as clearly labeled Phase 2/3 nav placeholders." },
     { title: "2 · Architecture & data model", description: "Domain types, a service-layer seam over a mock in-memory store, RBAC permission map, and a seeded-account auth flow — all decided before any UI." },
