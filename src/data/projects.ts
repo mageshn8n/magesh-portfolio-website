@@ -45,17 +45,7 @@ export type Project = {
   category: string; // category slug
 };
 
-const raw: Record<string, [string, string][]> = {
-  "mobile-apps": [["Meditation & Wellness App", "Consumer mobile · iOS · Android"]],
-  "web-applications": [
-    ["Learning Management System", "L&D at scale · Adaptive paths"],
-    ["Workflow Automation Platform", "Process ops · Visual builder"],
-  ],
-  "saas-products": [
-    ["Project Management SaaS", "B2B productivity · 0→1 product"],
-    ["Customer Success Platform", "Retention & health · Lifecycle UX"],
-  ],
-};
+const raw: Record<string, [string, string][]> = {};
 
 function slugify(text: string) {
   return text
