@@ -3,10 +3,12 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { motion, type MotionValue, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { caseStudies } from "@/data/caseStudies";
 import { getCategory } from "@/data/projects";
 import WorkThumb from "../WorkThumb";
 import SectionHeading from "../SectionHeading";
+import { CaseStudyThumb, caseStudyVisuals, containScreenshotThumbs, realScreenshotThumbs } from "../caseStudyVisuals";
 
 const featured = caseStudies.slice(0, 3);
 
@@ -59,11 +61,37 @@ export default function IdeateWork() {
                 href={`/work/${project.slug}`}
                 className="card group flex flex-col overflow-hidden transition-colors hover:border-[color:var(--color-border-strong)]"
               >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <WorkThumb
-                    slug={project.slug}
-                    className="transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                  />
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="absolute inset-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105">
+                    {caseStudyVisuals[project.slug] ? (
+                      <CaseStudyThumb>
+                        {(() => {
+                          const Visual = caseStudyVisuals[project.slug];
+                          return <Visual />;
+                        })()}
+                      </CaseStudyThumb>
+                    ) : realScreenshotThumbs[project.slug] ? (
+                      <Image
+                        src={realScreenshotThumbs[project.slug]}
+                        alt={project.title}
+                        fill
+                        sizes="(min-width: 640px) 33vw, 100vw"
+                        className="object-cover object-top"
+                      />
+                    ) : containScreenshotThumbs[project.slug] ? (
+                      <div className="flex h-full w-full items-center justify-center bg-[color:var(--color-surface)] p-4">
+                        <Image
+                          src={containScreenshotThumbs[project.slug]}
+                          alt={project.title}
+                          width={370}
+                          height={806}
+                          className="h-full w-auto object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <WorkThumb slug={project.slug} />
+                    )}
+                  </div>
                 </div>
                 <div className="flex flex-1 flex-col gap-2 p-5">
                   <p className="label !text-[10px]">{category?.name}</p>
