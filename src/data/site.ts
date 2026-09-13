@@ -26,11 +26,40 @@ export const site = {
 
   aboutEyebrow: "Meet Magesh",
   aboutParagraphs: [
-    "A Senior UX/UI Product Designer, Design Strategist, and Visual Storyteller with more than 18 years of experience creating digital experiences for global organizations.",
-    "My journey began with graphic design and front-end development and evolved into a deep specialization in user experience, product strategy, information architecture, and human-centered design.",
-    "Having worked with industry leaders including IBM and Dell, I bring enterprise-grade design thinking, systems thinking, and strategic problem-solving to every project.",
-    "Today, alongside my role as Senior Product Owner at Art of Living, I partner with startups, NGOs, SaaS companies, and enterprises to design products, build design systems, and craft meaningful digital experiences.",
+    "I'm a Product Design leader focused on turning complex problems into simple, meaningful, and scalable product experiences.",
+    "My work sits at the intersection of product strategy, customer experience, technology, and business outcomes. I partner closely with product, engineering, research, and business teams to identify the right problems, define opportunities, and create experiences that deliver measurable impact.",
+    "As a design leader, I care as much about building high-performing teams and strong design systems as I do about the quality of the products we create. I help teams establish a clear design vision, strengthen design processes, develop talent, and create a culture where great design can scale.",
+    "I bring a systems-thinking approach to product design—from discovery and strategy through interaction design, design systems, experimentation, and delivery. I'm particularly interested in how emerging technologies and AI are changing the way we design, build, and experience digital products.",
   ],
+  aboutFocusAreas: [
+    {
+      title: "Product Strategy",
+      description: "Connecting customer needs, business goals, and product opportunities.",
+    },
+    {
+      title: "Design Leadership",
+      description: "Building, mentoring, and enabling high-performing product design teams.",
+    },
+    {
+      title: "Product Experience",
+      description: "Creating intuitive, accessible, and cohesive experiences across complex products.",
+    },
+    {
+      title: "Design Systems",
+      description: "Establishing scalable foundations that improve consistency, quality, and speed.",
+    },
+    {
+      title: "AI & Emerging Technology",
+      description: "Exploring new interaction models and opportunities created by AI.",
+    },
+    {
+      title: "Business Impact",
+      description:
+        "Connecting design decisions to measurable outcomes such as adoption, conversion, engagement, and retention.",
+    },
+  ],
+  aboutClosing:
+    "I believe great product design is not simply about making products easier to use or more beautiful. It is about solving the right problems, creating meaningful value for people, and helping businesses move forward.",
   aboutBadge: "Psychology & neuroscience-informed practice",
   aboutCta: "Download resume",
 
